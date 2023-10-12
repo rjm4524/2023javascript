@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>continue</title>
+	</head>
+	<body>
+		<script>
+			var random = Math.floor(Math.random()*100)+1;
+			alert("랜덤숫자" +random);
+			while(true) {
+				var input = Number(prompt("숫자를 입력하세요."));
+				alert("입력한 숫자"+input);
+				if(input==random) {
+					document.write("랜덤숫자 : " + random);
+					break; 
+				}else if(input>random) {
+					alert("입력한 숫자가 더 큽니다.")
+				}else if(input<random){
+					alert("입력한 숫자가 더 작습니다.")
+				}
+			}
+		</script>
+	
+	</body>
+</html>

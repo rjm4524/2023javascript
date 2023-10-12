@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>구구단</title>
+		<style>
+			*{margin:0; padding: 0;}
+			h1{text-align: center; margin:30px}
+			table{width: 600px; margin:0 auto;}
+			table,th,td{border: 1px solid black; border-collapse:collapse;}
+			th,td{width: 100px; height: 40px; font-size: 20px; text-align: center;}
+			th{background: #efefef;}
+		</style>
+		<script>
+			function contBtn(){
+				var data = "";
+				for(var i=2; i<=9; i++) {
+					if(i%2!=0) continue 
+					data += "<tr>";	
+					data += "<th colspan='5'>"+i+"단</th>";	
+					data += "</tr>";	
+					for(var j=1; j<=9; j++) {
+				     data += "<tr>"
+				     data += "<td>"+i+"</td>"
+				     data += "<td>*</td>"
+				     data += "<td>"+j+"</td>"
+				     data += "<td>=</td>"
+				     data += "<td>"+(i*j)+"</td>"
+				     data += "</tr>"
+					}
+				}
+				     document.querySelector("#cont").innerHTML = data;
+			}
+		</script>
+	</head>
+	<body>
+		<button type="button" onclick="contBtn()">구구단 출력</button>
+		<h1>구구단</h1>
+		<table id="cont">
+			<!--
+				<tr>
+				<td colspan="5">2단</td>
+			</tr>-->
+			<thead id="cont">
+			
+			</thead>
+			
+		</table>
+		<script>
+			contBtn();
+		</script>
+	
+	</body>
+</html>

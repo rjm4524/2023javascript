@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>웹브라우저 확인</title>
+		<script src="js/common01.js"></script>
+		<script>
+			//alert("경고창이 뜹니다.");
+			//console.log("콘솔창에 글자가 나타남");
+			//prompt("이름을 입력하세요.");
+			//confirm("게시글을 삭제할까요?")
+			var score;//전역변수 
+			var pw;
+			var grade;
+			function sBtn() {
+				score = document.querySelector("#score").value;
+				// 90점이상 A , 80점 이상 B 70점이상 C ,D,F
+				if(score>=90) {
+					grade = "A";
+				}else if(score>=80) {
+					grade = "B";
+				}else if(score>=70) {
+					grade = "C";
+				}else if(score>=60) {
+					grade = "D";
+				}else {
+					grade = "F";
+				}
+				document.querySelector("#mark").innerText = grade;
+				
+				
+				
+				
+				//함수안에 선언이 될 경우 지역변수가 됨.
+				//querySelector= id,class 등등으로 되있는것을 찾아오라는 명령어,
+				/*alert("점수 : "+score);
+				pw = document.querySelector("#pw").value;
+				alert("비밀번호 : "+pw);
+				var txt = document.querySelector("#p").innerText;
+				alert("글자 :"+txt);*/
+			}
+		</script>
+		<style>
+			#mark{width: 300px; height: 100px; border: 3px solid black;
+			font-size: 40px; font-weight: 700; text-align: center; line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<label>점수</label>
+			<input type="text" name="score" id="score">
+			<input type="button" value="입력" onclick="sBtn()">
+			<br>
+		</form>
+		<h2>[ 나의 성적 ]</h2>
+		<div id="mark"></div>
+		
+	</body>
+</html>

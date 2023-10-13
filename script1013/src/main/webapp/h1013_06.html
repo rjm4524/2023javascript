@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>날짜 함수</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			//2022,04,30
+			var today = new Date();//현재 날짜
+			var wday = new Date(2023,9,31); //0부터 1월이 됨, 특정날짜-2023,12,31일 
+		 	var lastday = wday.getTime() - today.getTime();
+		 	var result = Math.ceil(lastday/(1000*60*60*24));
+		 	//alert("D-Day :" + result);
+		 	function btn(){
+				 alert("날짜 input:"+$("#date").val());
+			 }
+		</script>
+	</head>
+	<body>
+		<input type="date" name="date" id="date">
+		<button type="button" onclick="btn()">확인</button>
+	
+	
+	</body>
+</html>

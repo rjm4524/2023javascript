@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Array</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<style>
+			#txt{width: 300px; height: 100px; border: 1px solid black;
+			font-size: 20px; text-align: center;}
+		</style>
+	</head>
+	<body>
+		<script>
+			var arr = ["홍길동","유관순","이순신","강감찬"];
+			function arr_print(){
+				//alert("test");
+			     $("#txt").text(arr);
+			}
+			function btn() {
+				var name = $("#name").val();
+				var temp = 0;
+				for(var i=0; i<arr.length;i++){
+					if(name==arr[i]){
+						arr.splice(i,1);
+						arr_print();
+						temp=1; //찾는 이름이 있을떄는 1
+						$("#name").val("");
+						$("#name").focus();
+					    break;
+					} 
+				}
+				if(temp==0) {
+					alert("찾는 이름이 업습니다.")
+					$("#name").val("");
+					$("#name").focus();
+				}
+			}
+			
+			
+			
+		</script>
+		<h1>명단</h1>
+		<input type="button" onclick="arr_print()" value="불러오기">
+		<br>
+		<input type="text" name="name" id="name">
+		<input type="button" onclick="btn()" value="삭제">
+		<br>
+	   <div id="txt">
+		   
+	   </div>
+		
+	
+	</body>
+</html>

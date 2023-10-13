@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>check box 확인</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<label>취미</label>
+			<br>
+			<input type="checkbox" name="hobby" id="game" value="game">
+			<label for="game">게임</label>
+			<input type="checkbox" name="hobby" id="golf" value="golf">
+			<label for="golf">골프</label>
+			<input type="checkbox" name="hobby" id="swim" value="swim">
+			<label for="swim">수영</label>
+			<input type="checkbox" name="hobby" id="book" value="book">
+			<label for="book">독서</label>
+			<input type="checkbox" name="hobby" id="run" value="run">
+			<label for="run">조깅</label>
+			<br>
+			<input type="button" onclick="saveBtn()" value="저장">
+		</form>
+		<script>
+			var arr_hobby =["game","golf","swim","book","run"];
+			var hobby = "golf,book"; //String 1개 -"game,golf,swim,book,run";
+			alert($("input:checkbox[name='hobby']").length);
+			console.log($("input:checkbox[name='hobby']").length);
+			//5개 checkbox를 1개를 가져와서 실행시켜줌.
+			for(var i=0; i<$("input:checkbox[name='hobby']").length;i++){
+		   		//alert($("input:checkbox[name='hobby']")[i].value);
+				if(hobby.indexOf($("input:checkbox[name='hobby']")[i].value)!=-1){
+					$("input:checkbox[name='hobby']")[i].checked = true;
+				}
+			}
+			
+			/*$("input:checkbox[name='hobby']").each(function){
+				if(hobby.indexOf($("input:checkbox[name='hobby']")[i].value)!=-1){
+					this.checked = true
+			}
+			});*/
+				
+			
+			
+		</script>
+	
+	</body>
+</html>

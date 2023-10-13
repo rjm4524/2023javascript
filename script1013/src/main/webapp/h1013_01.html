@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>value,innerText</title>
+		<style>
+			
+		</style>
+		<script>
+			function btn(){
+				var name = document.querySelector("#name").value;
+				if(name==""){
+					alert("이름을 입력해주세요.");
+					document.querySelector("#name").focus();
+					return false;
+				}
+				alert("이름 :" + name);
+				var kor = document.querySelector("#content").innerText;
+				alert("국어점수 :"+kor);
+				//document.getElementsByClassName("") 클래스된것을 가지고 오기
+				//document.getElementsByTagName("label")'' 태그로 된것을 가지고 오기
+			}
+		</script>
+	</head>
+	<body>
+		<h1>학생성적프로그램</h1>
+		<form action="#" method="get">
+			<label>이름</label>
+			<input type="text" name="name" id="name">
+			<br>
+			<button type="button" onclick="btn()">저장</button>
+		</form>
+		<div id></div>
+	
+	</body>
+</html>

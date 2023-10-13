@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>날짜 함수</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			//2022,04,30
+			var today = new Date();//현재 날짜
+			var wday = new Date(2023,9,11); //특정날짜 
+		 	var result = today.getTime() - wday.getTime();
+		 	console.log("오늘 날짜 :" +today.getTime());
+		 	console.log("예전날짜 날짜 :" +wday.getTime());
+		 	//result를 일자로 변경. - 1000*60*60*24로 나누면 일자를 알 수 있음.
+		 	var last_day = Math.floor(result/(1000*60*60*24));
+		 	console.log("현재 차이 :" +last_day);
+		 	var year = Math.ceil(last_day/365);//연도
+		 	var dday = Math.ceil(last_day%365);
+		 	alert(last_day+"일이 지났습니다.");
+		 	alert(year+"년"+dday+"일이 지났습니다.");
+		</script>
+	</head>
+	<body>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Math</title>
+	</head>
+	<body>
+		<script>
+			var arr = new Array();
+			var arr2 = new Array(1,2,3); //3개
+			var arr3 = [1,2,3];
+			
+			arr.push(1);
+			arr.push(3);
+			arr.push(5);
+			arr.pop(); //제일마지막 배열이 삭제.
+			arr2.shift() //첫번째 삭제.
+			arr2.push(4);//arr2에 맨뒤에 1개 추가 .[4]  
+			arr2.unshift(5);//제일 앞쪽에 5라는 숫자 추가
+			arr3[5]=10; //5번째 방에 10추가
+			arr2.splice(2,0,10,11)//2번째 방에 10,11을 추가 
+			arr3.splice(1,1);//1번째 방에 1개를 삭제.
+			
+			
+			
+			
+			document.write(arr,"<br>");
+			document.write(arr2,"<br>");
+			document.write(arr3,"<br>");
+			document.write(arr2.length,"<br>");
+			
+		</script>
+	
+	</body>
+</html>

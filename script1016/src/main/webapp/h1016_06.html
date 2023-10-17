@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>부모창,자식창</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<style>
+			*{margin:0; padding: 0; overflow:hidden;}
+		</style>
+		<script>
+			function checkBtn(){
+				alert("test");
+				window.open("id_check.html","id","width=500,height=400,scrollbars=no")
+			}
+			function check() {
+				alert("DB확인 결과 중복된 아이디가 없습니다. 아이디 사용가능")
+			}
+		</script>
+	</head>
+	<body>
+		<h1>부모창</h1>
+		<form action="#" method="get" name="pfrm">
+			<label>아이디 중복확인</label><br>
+			<input type="text" name="id" id="id" readonly>
+			<button type="button" onclick="checkBtn()">아이디 중복확인</button>
+			<br>
+			<p>* 아이디 중복체크를 확인해주세요.</p>
+		</form>
+	
+	</body>
+</html>

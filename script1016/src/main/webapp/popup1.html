@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>pop up</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<style>
+			*{margin:0; padding: 0; overflow: hidden;}
+			div{width: 400px; height: 424px; cursor: pointer; }
+			img{width: 400px;}
+		</style>
+		<script>
+			function urlBtn(){
+				window.opener.location = "https://www.cjcookit.com/pc/event/planView?plnId=105337";
+				window.close();
+			}
+		</script>
+	</head>
+	<body>
+		<div onclick="urlBtn()">
+			 <img src="images/pop.jpg">
+		</div>
+	
+	</body>
+</html>

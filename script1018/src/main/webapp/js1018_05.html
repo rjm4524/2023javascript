@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>이벤트</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<style>
+			*{margin:0; padding: 0;}
+			body{height: 3000px;}
+			div{width: 400px; height: 200px; border: 3px solid black;}
+			input{width: 400px; height: 40px; font-size: 30px;}
+			button{width: 120px; height: 60px; }
+			section{position: fixed; width: 500px; height: 300px;}
+		</style>
+		<script>
+			$(function(){ //제이쿼리 선언
+				$("#btn").click(function(){
+					$("#txt").append("<h1>네이버</h1>");
+				});
+				
+				$("#memo").keyup(function(e){
+					val_m=$("#memo").val();
+					console.log(e.keyCode)
+					if(e.keyCode == 13){
+						$("#txt").append(val_m);
+						$("#memo").val("");
+					}
+						
+				});
+				$(window).on("scroll",function(){
+					$("#txt").text($(this).scrollTop());//현재 스크롤 높이를 text박스에 입력
+				});
+				
+				
+				
+			});//jquery
+				
+		
+			
+		</script>
+	</head>
+	<body>
+		<section>
+			<div id="txt"></div>
+			<input type="text" name="memo" id="memo"><br>
+			<button id="btn" onclick="btn()">저장</button>
+		</section>
+	
+	</body>
+</html>

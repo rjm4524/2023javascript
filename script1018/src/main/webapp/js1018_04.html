@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			*{margin:0; padding: 0;}
+			div{border: 3px solid black; width: 300px; height: 300px;}
+		</style>
+	</head>
+	<script>
+		$(function(){
+			var arr1 = [
+			{"area":"서울","name":"홍길동"},
+			{"area":"부산","name":"유관순"},
+			{"area":"대구","name":"이순신"},
+			{"area":"광주","name":"강감찬"},
+			{"area":"서울","name":"김유신"},
+			{"area":"부산","name":"홍길자"},
+			{"area":"서울","name":"홍길순"},
+			];
+			var date = "";
+			
+			var arr2 = $.map(arr,function(data,idx){
+				//console.log("a:"+a.area);
+				//console.log("b :"+b);
+				if(data.area=="서울"){
+					return data;
+				}
+			});	
+			console.log(arr2);
+			
+			var hdata = "";
+			
+			$(arr2).each(function(idx,data){
+				hdata = "지역:"+data.area+", 이름:"+data.name+"<br>";
+			});
+			
+			/*
+			for(var i=0; i<arr2.length;i++) {
+				data = "지역:"+arr2[i].area+", 이름:"+arr2[i].name+"<br>";
+				
+			}
+			
+			*/
+			$("#txt").html(data);
+			
+		});//jquery
+	</script>
+	<div>
+		
+	</div>
+	<body>
+	
+	</body>
+</html>

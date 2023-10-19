@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax-비동기방식</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<style>
+			*{margin:0;padding: 0;}
+			section{width: 1000px; margin:50px auto 0; text-align: center;}
+			h1{font-size: 40px;}
+			table{width:100%; margin-top: 30px;}
+			table,th,td{border: 1px solid black; border-collapse: collapse;}
+			th,td{height: 60px; font-size: 20px; }
+		</style>
+		<script>
+			$(function(){
+				$("#openBtn").click(function(){
+					var s_url = "source/StuScore.json"
+					$.ajax ({
+						url:s_url,
+						type:"get",
+						data:"",
+						dataType:"json",
+						success:function(data) {
+						    alert("데이더성공")
+						  console.log(data);
+						  var sdata = "";
+						  for(var i=0; i<data.length; i++) {
+							  
+						  sdata += "<tr>";
+						  sdata += "<td>"+data[i].StuNum+"</td>";
+						  sdata += "<td>"+data[i].Name+"</td>";
+						  sdata += "<td>"+data[i].kor+"</td>";
+						  sdata += "<td>"+data[i].eng+"</td>";
+						  sdata += "<td>"+data[i].math+"</td>";
+						  sdata += "<td>"+data[i].total+"</td>";
+						  sdata += "<td>"+data[i].avg.toFixed(2)+"</td>";
+						  sdata += "</tr>";
+						  }
+						  
+		 					$("#cont").html(sdata);						 
+						},
+						
+						error:function() {
+							alert("데이터 불러오기 실패")
+						}
+					
+				});//ajax
+			});//click
+		});//jquery
+				
+		</script>
+	</head>
+	<body>
+		<section>
+			<h1>회원정보</h1>
+			<button id="openBtn">데이터 불러오기</button>
+			<table>
+				<colgroup>
+					<col width="8%">
+					<col width="12%">
+					<col width="10%">
+					<col width="10%">
+					<col width="10%">
+					<col width="15%">
+					<col width="35%">
+				</colgroup>
+				<thaed>
+					<tr>
+						<th>학생번호</th>
+						<th>이름</th>
+						<th>국어</th>
+						<th>영어</th>
+						<th>수학</th>
+						<th>합계</th>
+						<th>평균</th>
+					</tr>
+				</thaed>
+				<!--데이터 추가-->
+				<tbody id="cont">
+					
+					
+				</tbody>
+			</table>
+		</section>
+	
+	</body>
+</html>
